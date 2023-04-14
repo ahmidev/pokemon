@@ -1,14 +1,13 @@
 package com.exo.pokemon.repository;
 
-import com.exo.pokemon.entities.Pokemon;
+import com.exo.pokemon.entities.Veterinaire;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-
 @Repository
-public interface PokemonRepository  extends JpaRepository<Pokemon, Long> {
+public interface VeterinaireRepository extends JpaRepository<Veterinaire,Long> {
 
-   Optional<Pokemon> findByName(String name);
+    Optional<Veterinaire> findByName(String name);
 }

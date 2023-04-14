@@ -1,10 +1,7 @@
 package com.exo.pokemon.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Pokemon {
@@ -16,7 +13,9 @@ public class Pokemon {
     private String name;
 
     private  String type;
-
+    @ManyToOne
+    @JoinColumn(name = "veterinaire_id")
+    private Veterinaire veterinaire;
     public Pokemon() {
 
     }
@@ -49,5 +48,13 @@ public class Pokemon {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Veterinaire getVeterinaire() {
+        return veterinaire;
+    }
+
+    public void setVeterinaire(Veterinaire veterinaire) {
+        this.veterinaire = veterinaire;
     }
 }
